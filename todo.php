@@ -52,10 +52,6 @@
                             <input type="submit" value="Add" class="btn btn-primary my-2 px-4">
                         </div>
                     </form>
-                    <div id="status">
-                        stat
-                    </div>
-                    <button id="debug">The debug button</button>
                 </div>
 
                 <!-- Modal -->
@@ -67,9 +63,9 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <p id="modalText">
+                                <div id="modalText">
 
-                                </p>
+                                </div>
                                 <p id="rowData">
 
                                 </p>
@@ -87,8 +83,6 @@
             </div>
         </div>
     </div>
-
-
 </body>
 
 <script>
@@ -97,9 +91,8 @@
         switch (action) {
             case "add":
                 var form = document.querySelector('form');
-                alert("add");
-                alert(form)
                 formSubmit(form);
+                $("#todoForm").trigger("reset");
                 break;
             case "remove":
                 var i = r.getAttribute("data-row-id");
@@ -173,10 +166,6 @@
     $(document).ready(function() {
         getTable();
     });
-
-    $("#debug").click(function() {
-        $("#status").html()
-    });
 </script>
 
 <style>
@@ -184,6 +173,7 @@
     #removeButton {
         padding: 5px;
         border-radius: 5px;
+        border-width: 0px;
         transition: background-color 150ms;
         transition-timing-function: linear;
     }

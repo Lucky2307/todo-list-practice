@@ -33,7 +33,7 @@ function getData()
         $rows = $dbResult->fetch_all(MYSQLI_ASSOC);
         foreach ($rows as $row) {
             echo "<tr>";
-            echo "<td><a href=\"#\" onclick=\"setAction(this)\" style=\"color: black\"  
+            echo "<td><a href=\"javascript:void(0)\" onclick=\"setAction(this)\" style=\"color: black\"  
             data-action=\"remove\" 
             data-row-id=\"" . $row["id"] . "\" 
             data-row-todo=\"" . $row["todo"] . "\" 
